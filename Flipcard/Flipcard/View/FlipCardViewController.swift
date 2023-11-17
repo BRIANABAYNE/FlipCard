@@ -8,37 +8,33 @@
 import UIKit
 
 class FlipCardViewController: UIViewController {
-
+    
+    
+    // MARK: - Properties
+    var flipcount = 0 {
+        didSet {
+            flipCountLabel.text = "Flips: \(flipcount)"
+        }
+    }
+    
+    var emojiChoices = ["🍒", "🍆", "🫦", "💅","👩‍❤️‍💋‍👩"]
+    
+    // MARK: - Outlet
+    @IBOutlet weak var flipCountLabel: UILabel!
+    
+    // MARK: - Collection
+    
+    @IBOutlet var cardButtons: [UIButton]!
     
     // MARK: - Actions
     @IBAction func lipsFlipCard(_ sender: UIButton) {
-        flipCard(emoji: "🫦", button: sender)
+        flipcount += 1
+        if let cardNumber = cardButtons.index(of: sender) {
+            flipCard(emoji: emojiChoices, button: sender)
+        }
     }
-    
-    
-    @IBAction func flipSecondCard(_ sender: UIButton) {
-        flipCard(emoji: "💅", button: sender)
-    }
-
-    @IBAction func flipThirdCard(_ sender: UIButton) {
-        flipCard(emoji: "🍒", button: sender)
-    }
-    
-    @IBAction func flipFourthCard(_ sender: UIButton) {
-        flipCard(emoji: "🍆", button: sender)
-    }
-    
-    @IBAction func flipFithCard(_ sender: UIButton) {
-        flipCard(emoji: "👩‍❤️‍💋‍👩", button: sender)
-    }
-    
-    @IBAction func flipSixCard(_ sender: UIButton) {
-        flipCard(emoji: "💦", button: sender)
-    }
-    
     
     // MARK: - Functions
-    
     func flipCard(emoji: String, button: UIButton ) {
         if button.currentTitle == emoji {
             button.setTitle("", for: UIControl.State.normal)
@@ -47,24 +43,4 @@ class FlipCardViewController: UIViewController {
             button.setTitle(emoji, for: UIControl.State.normal)
             button.backgroundColor = .white }
     }
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
+}

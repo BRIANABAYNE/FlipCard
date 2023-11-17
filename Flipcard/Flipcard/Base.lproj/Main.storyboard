@@ -36,7 +36,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="42"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="flipSecondCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="mcw-df-hCC"/>
+                                    <action selector="lipsFlipCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="Y9a-1L-u6y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibo-8R-9IM">
@@ -48,7 +48,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="42"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="flipFourthCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="dkd-K2-6Lp"/>
+                                    <action selector="lipsFlipCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="3M5-ad-3l7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WS-ac-dPU">
@@ -60,7 +60,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="42"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="flipFithCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="rrN-Pn-RLV"/>
+                                    <action selector="lipsFlipCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="lSX-b9-rNp"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1l7-eP-xpM">
@@ -72,7 +72,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="42"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="flipThirdCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="PRv-k2-TPr"/>
+                                    <action selector="lipsFlipCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="bP8-b3-98l"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqN-Wx-Mwr">
@@ -84,17 +84,35 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="42"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="flipSixCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="d6k-XX-C3O"/>
+                                    <action selector="lipsFlipCard:" destination="Fxq-sv-SDM" eventType="touchUpInside" id="2HA-gT-l3M"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flips: O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrm-ju-E5q">
+                                <rect key="frame" x="125" y="721" width="123" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xuW-Yg-XZt"/>
                         <color key="backgroundColor" red="1" green="0.60577994220201514" blue="0.69579419700250611" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="rrm-ju-E5q" firstAttribute="leading" secondItem="xuW-Yg-XZt" secondAttribute="leading" constant="125" id="SXl-yx-a3R"/>
+                            <constraint firstItem="xuW-Yg-XZt" firstAttribute="trailing" secondItem="rrm-ju-E5q" secondAttribute="trailing" constant="145" id="Uey-f3-2cQ"/>
+                            <constraint firstItem="xuW-Yg-XZt" firstAttribute="bottom" secondItem="rrm-ju-E5q" secondAttribute="bottom" constant="61" id="oe1-Qo-7cn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="flipCountLabel" destination="rrm-ju-E5q" id="Km4-rS-P0f"/>
+                        <outletCollection property="cardButtons" destination="Xfy-b6-V3f" collectionClass="NSMutableArray" id="n8g-7m-09O"/>
+                        <outletCollection property="cardButtons" destination="euX-Zj-gzW" collectionClass="NSMutableArray" id="bUl-j5-QCi"/>
+                        <outletCollection property="cardButtons" destination="Ibo-8R-9IM" collectionClass="NSMutableArray" id="a9j-Cw-BDc"/>
+                        <outletCollection property="cardButtons" destination="1WS-ac-dPU" collectionClass="NSMutableArray" id="ZLb-Hg-fOM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKY-Am-BsP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="248" y="8"/>
+            <point key="canvasLocation" x="246.56488549618319" y="7.746478873239437"/>
         </scene>
     </scenes>
 </document>
